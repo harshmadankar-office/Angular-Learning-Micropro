@@ -1,0 +1,46 @@
+<h4>Employee Dashboard</h4>
+<div>
+    <div class="d-flex gap-2">
+        <input type="text" placeholder="search by name/department" [(ngModel)]="searchText" size="25">
+        <select [(ngModel)]="selectedStatus">
+            <option value="All">All</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+        </select>
+    </div>
+
+    @if (filteredEmployees.length) {
+    <ul>
+        @for (employees of filteredEmployees; track $index) {
+        <li>{{employees.name}} | {{employees.department}} | {{employees.status}} </li>
+        }
+    </ul>
+    }@else {
+    <p>No employees found.</p>
+    }
+
+    <!-- @if (filteredEmployees.length > 0) {
+    @for (employee of filteredEmployees; track employee.id) {
+    <div class="employee-card">
+        <h4>{{ employee.name }}</h4>
+        <p>{{ employee.department }}</p>
+        @if (employee.status === 'Active') {
+        <span class="badge active">Active</span>
+        } @else {
+        <span class="badge inactive">Inactive</span>
+        }
+    </div>
+    }
+    } @else {
+    <div class="empty-state">
+        No employees found.
+    </div>
+    } -->
+
+    <!-- for template reference variable -->
+    <!-- <input #usernameInput>
+    <button (click)="show(usernameInput.value)">
+        Show
+    </button> -->
+
+</div>

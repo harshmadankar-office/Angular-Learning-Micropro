@@ -1,0 +1,91 @@
+<!-- Day 5 :: Control Flow  -->
+
+<!-- 1) @if -->
+
+@if(isLogin){
+<div>
+    }
+
+    @if(isLogin){
+    <button> LOGOUT <button>
+            }@else{
+            <button> LOGIN <button>
+                    }
+
+                    <!-- 2) @For     -->
+
+                    <!-- ts.file -->
+
+                    users = [
+                    {name:"Harsh", id:1}
+                    {name:"Amol", id:2}
+                    {name:"Raj", id:3}
+                    {name:"Devesh", id:4}
+                    ];
+
+
+                    <!-- Render a list with @for + track -->
+                    <!-- track by id -->
+                    <ul>
+                        @for(user of users; track user.id){
+                        <li>
+                            {{user.name}}
+                        </li>
+                        }
+                    </ul>
+
+                    <!-- track by index -->
+                    <ul>
+                        @for(user of users; track user.id; let i = $index){
+                        <p>
+                            {{i + 1}}.{{user.name}}
+                        </p>
+                        }
+                    </ul>
+
+                    <!-- @switch Condition -->
+
+                    <!-- ts file --> status = "pending";
+
+                    @switch(status){
+                    @case("pending"){
+                    <p>Order Peding</p>
+                    }
+                    @case("approved"){
+                    <p>Order Approved</p>
+                    }
+                    @default("rejected"){
+                    <p>Rejected</p>
+                    }
+                    }
+
+                    <!-- ngContainer -->
+
+                    @if(isLogin){
+                    <ng-container>
+                        <h2>Welcome</h2>
+                        <button>logout</button>
+                    </ng-container>
+                    }
+
+                    <ul>
+                        <ng-container>
+                            @for(user of users; track user.id){
+                            <li>
+                                {{user.id}}.{{user.name}}
+                            </li>
+                            }
+                        </ng-container>
+                    </ul>
+
+                    <!-- ng-template -->
+
+                    <div *ngIf="isLogin; else login">
+                        <h2>Welcome</h2>
+                        <button>logout</button>
+                    </div>
+
+                    <ng-template #login>
+                        <h2>Please Login</h2>
+                        <button>login</button>
+                    </ng-template>

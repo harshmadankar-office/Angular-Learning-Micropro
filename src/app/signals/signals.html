@@ -1,0 +1,39 @@
+<h4>Signals</h4>
+<div class="d-flex gap-2">
+    <div>
+        <div class="d-flex gap-3">
+            <p>Count: {{ count() }}</p>
+            <button (click)="increment()">+</button>
+            <button (click)="decrement()">-</button>
+            <button (click)="reset()">Reset</button>
+        </div>
+        <br>
+        <div>
+            <span>{{name()}}</span>
+            <button (click)="changeName()">Change Name</button>
+        </div>
+    </div>
+    <div>
+        <!-- use computed() signals -->
+        <p>Price : {{price()}}</p>
+        <p>Quantity : {{quantity()}} </p>
+        <p>Total : {{total()}} </p>
+
+        <button (click)="increQuantity()"> + Quantity </button>
+        <button (click)="decreQuantity()"> - Quantity </button>
+    </div>
+    <div>
+        <!-- use effect() -->
+        <p>Effect Count : {{effectCountValue}}</p>
+    </div>
+
+    <div>
+        <p> Employee : {{employee() ?? 0}} </p>
+    </div>
+</div>
+
+<div>
+    <app-content
+        [employee]="empData"
+    ></app-content>
+</div>

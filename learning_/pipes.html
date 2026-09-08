@@ -1,0 +1,26 @@
+<!-- Day 6 :: Pipes -->
+
+<!-- Built-in Pipes -->
+
+user = {
+    id : 0,
+    name : "harsh"
+}
+
+{{name | titlecase}} <!-- output : Harsh Madankar -->
+
+{{user | json}} <!-- output :: user object print -->
+<!-- when I use json pipes it display same object we create same format {}. -->
+
+{{price | currency}}  <!-- output : $2500 -->
+
+{{date | date }} <!-- output :: 03/09/2003-->
+
+<!-- custom pipes -->
+<!-- pipe | truncate.pipe -->
+
+<!-- ts file ->   -->
+<!-- description : This is a very long description of the product -->
+
+{{description | truncate : 20}}
+

@@ -1,0 +1,33 @@
+<!-- Employee Add/Edit Reactive Form -->
+<h4>Reactive Form</h4>
+
+<form [formGroup]="empForm">
+    <div>
+        <button type="button" (click)="callDemoApi()">Call Demo Api</button>
+    </div>
+    <br><br>
+    <div class="d-grid gap-2">
+        <input type="text" formControlName="name" placeholder="Enter Name">
+        @if (empForm.get('name')?.touched && empForm.get('name')?.hasError('required')) {
+        <small>Name is required</small>
+        }
+        @if (empForm.get('name')?.touched && empForm.get('name')?.hasError('minlength')) {
+        <small>Name must be at least 3 characters</small>
+        }
+
+        <input type="email" formControlName="email" placeholder="Enter Email">
+        @if (empForm.get('email')?.touched && empForm.get('email')?.hasError('required')) {
+        <small>Email is required</small>
+        }
+        @if (empForm.get('email')?.touched && empForm.get('email')?.hasError('email')) {
+        <small>Enter a valid email</small>
+        }
+    </div>
+</form>
+
+<div class="d-grid">
+    @for(apiData of apiData;track apiData.id){
+    <span>{{apiData.name}}</span>
+    }
+    <!-- } -->
+</div>

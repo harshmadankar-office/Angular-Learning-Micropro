@@ -1,0 +1,48 @@
+:host{
+    overflow: hidden;
+}
+
+.w-20{
+    width:20%
+}
+
+.w-80{
+    width: 80%;
+}
+
+.dashboard {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    border-bottom: 1px solid black;
+}
+
+.sidebar {
+    border-right: 1px solid black;
+    height: calc(100vh - 89px);
+}
+
+main {
+    display: block;
+    padding: 7px 10px;
+}
+
+.content{
+    width: 80%;
+    height: calc(100% - 25px);
+    overflow: auto;
+}
+
+footer {
+    border-top: 1px solid black;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index:14;
+    background-color: azure;
+    margin: auto;
+}

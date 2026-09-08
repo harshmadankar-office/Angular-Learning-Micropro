@@ -1,0 +1,75 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "name": "Rahul",
+      "email": "rahul@gmail.com",
+      "age": 22,
+      "course": "An"
+    },
+    {
+      "id": "2",
+      "name": "Devesh",
+      "email": "devesh@gmail.com",
+      "age": 24,
+      "course": "React"
+    },
+    {
+      "id": "3",
+      "name": "Priya",
+      "email": "priya@gmail.com",
+      "age": 21,
+      "course": "Java"
+    },
+    {
+      "id": "5",
+      "name": "Sneha",
+      "email": "sneha@gmail.com",
+      "age": 23,
+      "course": "Python"
+    },
+    {
+      "id": "6",
+      "name": "Rohit",
+      "email": "rohit@gmail.com",
+      "age": 26,
+      "course": "C++"
+    },
+    {
+      "id": "7",
+      "name": "Neha",
+      "email": "neha@gmail.com",
+      "age": 22,
+      "course": "React"
+    },
+    {
+      "id": "dJpjbOicxqo",
+      "name": "Arshad",
+      "email": "arshad@gmail.com",
+      "age": 25,
+      "course": "MCA"
+    },
+    {
+      "id": "Kyhb7Dd7o-A",
+      "name": "chetan",
+      "email": "chetan@gmail.com",
+      "age": 24,
+      "course": "BCCA"
+    },
+    {
+      "id": "peygzHMzExY",
+      "name": "kumar",
+      "email": "kumar@gmail.com",
+      "age": 34,
+      "course": "MCA"
+    },
+    {
+      "id": "GQw5lDftT6o",
+      "name": "Ritesh",
+      "email": "ritesh@gmail.com",
+      "age": 27,
+      "course": "B.TECH"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

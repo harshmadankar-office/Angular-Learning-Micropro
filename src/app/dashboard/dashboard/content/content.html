@@ -1,0 +1,9 @@
+<h3>{{dashboard}}</h3>
+
+<button (click)="sendMessage()">Send Notification to Subject</button>
+
+<h5>Signal Input</h5>
+<p>
+    {{employee()?.id}} <br> {{employee()?.name}}
+    <!-- @for(employee() of emp; track emp.id){} -->
+</p>

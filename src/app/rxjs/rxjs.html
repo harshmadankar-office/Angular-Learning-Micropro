@@ -1,0 +1,26 @@
+<h4>RxJS</h4>
+<h6>Message for subject Behaviour : {{message}}</h6>
+
+<div class="d-flex justify-content-between ">
+    <!-- <div>
+        <span>All Student List</span>
+        @if (this.students.length) {
+        @for (student of students; track student.id) {
+        <div class="d-flex gap-2">
+            <span>{{student.name}} - {{student.course}}</span>
+        </div>
+        }
+        }
+    </div> -->
+
+    <div>
+        <span>Search Box - with switchmap() && debouncing()</span>
+        <div>
+            <input type="text" [formControl]="searchControl" placeholder="Search Student">
+        </div>
+
+        <span>{{filteredStudentData | json}}
+        </span>
+    </div>
+
+</div>
