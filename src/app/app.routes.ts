@@ -91,6 +91,7 @@ export const routes: Routes = [
   {
     path: 'employee',
     component: EmpDashboard,
+    canActivate : [authGuard],
 
     children: [
       {
