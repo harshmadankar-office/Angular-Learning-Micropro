@@ -6,12 +6,11 @@ import { Router } from '@angular/router';
 })
 export class Auth {
 
-  private router = inject(Router)
+  private router = inject(Router);
   private readonly TOKEN_KEY = 'auth_token';
 
   login(username: string, password: string) {
     if (username == 'admin' && password == 'admin') {
-
       console.log(username, password);
       let token = crypto.randomUUID();
       localStorage.setItem(this.TOKEN_KEY, token);
