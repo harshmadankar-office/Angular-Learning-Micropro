@@ -91,7 +91,7 @@ export const routes: Routes = [
   {
     path: 'employee',
     component: EmpDashboard,
-    canActivate : [authGuard],
+    canActivate: [authGuard],
 
     children: [
       {
@@ -111,7 +111,6 @@ export const routes: Routes = [
     redirectTo: 'emp-dashboard',
     pathMatch: 'full'
   },
-
 
   // Route Data - Static information attached to a route.
   {
