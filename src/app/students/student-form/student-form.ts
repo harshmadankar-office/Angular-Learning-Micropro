@@ -53,11 +53,11 @@ export class StudentForm {
 
     if (this.studentId) {
       this.studentService.updateStudent(formData as any).subscribe(() => {
-        this.router.navigate(['/student-list']);
+        this.router.navigate(['/dashboard/student-list']);
       })
     } else {
       this.studentService.addStudent(formData as any).subscribe(() => {
-      this.router.navigate(['/student-list']);
+      this.router.navigate(['/dashboard/student-list']);
       })
     }
   }

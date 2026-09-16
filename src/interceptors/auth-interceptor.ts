@@ -8,12 +8,12 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
     console.log('', req.url);
     const authReq = req.clone({
       setHeaders: {
-        Authentication: `Bearer ${token}`
+        Authorization: `Bearer ${token}`
       }
     });
     return next(authReq);
   }
+  console.log('No token found');
   return next(req);
-
 
 };

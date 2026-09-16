@@ -1,9 +1,12 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class Auth {
+
+  private router = inject(Router)
   private readonly TOKEN_KEY = 'auth_token';
 
   login(username: string, password: string) {
@@ -27,6 +30,7 @@ export class Auth {
 
   logout() {
     localStorage.removeItem(this.TOKEN_KEY);
+    this.router.navigate(['/login']);
   }
 
 }

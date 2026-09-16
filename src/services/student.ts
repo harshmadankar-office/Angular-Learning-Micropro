@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { observable, Observable } from 'rxjs';
 import { StudentForm } from '../models/student';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -9,6 +10,7 @@ import { StudentForm } from '../models/student';
 export class Student {
   private http = inject(HttpClient);
   private api = 'http://localhost:3000/students';
+  // private api = `${environment.apiUrl}/students`;  // also use this url :: (environment file)
 
   // use Observable 
   public data$ = new Observable(observable => {

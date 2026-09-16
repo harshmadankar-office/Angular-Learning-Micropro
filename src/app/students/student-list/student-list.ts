@@ -35,7 +35,7 @@ export class StudentList {
   }
 
   addStudent() {
-    this.router.navigate(['students/add']);
+    this.router.navigate(['/dashboard/students/add']);
   }
 
   studentData: any;
@@ -43,13 +43,13 @@ export class StudentList {
     // this.studentService.getStudentById(studentId as any).subscribe({
     //   next: (data) => {
     //     this.studentData = data;
-        this.router.navigate(['/students/edit', studentId]);
+        this.router.navigate(['/dashboard/students/edit', studentId]);
     //   }
     // });
   }
 
   viewStudent(id: string) {
-    this.router.navigate(['/students', id]);
+    this.router.navigate(['/dashboard/students', id]);
   }
 
   deleteStudent(studentId: string) {

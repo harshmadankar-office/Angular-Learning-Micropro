@@ -1,13 +1,6 @@
 {
   "students": [
     {
-      "id": "1",
-      "name": "Rahul",
-      "email": "rahul@gmail.com",
-      "age": 22,
-      "course": "An"
-    },
-    {
       "id": "2",
       "name": "Devesh",
       "email": "devesh@gmail.com",
@@ -48,27 +41,6 @@
       "email": "arshad@gmail.com",
       "age": 25,
       "course": "MCA"
-    },
-    {
-      "id": "Kyhb7Dd7o-A",
-      "name": "chetan",
-      "email": "chetan@gmail.com",
-      "age": 24,
-      "course": "BCCA"
-    },
-    {
-      "id": "peygzHMzExY",
-      "name": "kumar",
-      "email": "kumar@gmail.com",
-      "age": 34,
-      "course": "MCA"
-    },
-    {
-      "id": "GQw5lDftT6o",
-      "name": "Ritesh",
-      "email": "ritesh@gmail.com",
-      "age": 27,
-      "course": "B.TECH"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
