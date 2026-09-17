@@ -4,7 +4,7 @@
         <!-- Username -->
         <div>
             <label>Username</label>
-            <input type="text" formControlName="username" placeholder="Enter username">
+            <input type="text" formControlName="username" placeholder="Enter username" autocomplete="off">
             @if ( loginForm.controls.username.touched && loginForm.controls.username.invalid) {
             <small>Username is required</small>
             }
@@ -12,14 +12,14 @@
         <!-- Password -->
         <div>
             <label>Password</label>
-            <input type="password" formControlName="password" placeholder="Enter password">
+            <input type="password" formControlName="password" placeholder="Enter password" autocomplete="off">
             @if ( loginForm.controls.password.touched &&loginForm.controls.password.invalid) {
             <small>Password is required</small>
             }
         </div>
         <!-- Error -->
         @if (errorMessage) {
-            <p class="text-danger">{{ errorMessage }}</p>
+        <p class="text-danger">{{ errorMessage }}</p>
         }
 
         <button type="submit" [disabled]="loginForm.invalid">

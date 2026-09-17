@@ -10,6 +10,7 @@ import { RXJS } from './rxjs/rxjs';
 import { Login } from './login/login';
 import { authGuard } from './auth/auth-guard';
 import { ShowContentCard } from './show-content-card/show-content-card';
+import { TryModal } from './try-modal/try-modal';
 
 export const routes: Routes = [
 
@@ -86,6 +87,10 @@ export const routes: Routes = [
       {
         path: 'content-projection-card',
         component: ShowContentCard
+      },
+      {
+        path: 'use-modal',
+        component: TryModal
       }
     ]
   },

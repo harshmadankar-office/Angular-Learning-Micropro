@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-use-modal',
@@ -7,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrl: './use-modal.scss',
 })
 export class UseModal {
+  @Input() title = "";
+  isOpen : boolean = false;
 
+  closeModal(){
+
+  }
+
+  saveDetails(){
+
+  }
 }
