@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ModalService } from '../../services/modal-service';
+import { StudentForm } from '../students/student-form/student-form';
 
 @Component({
   selector: 'app-try-modal',
@@ -7,7 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './try-modal.scss',
 })
 export class TryModal {
+  private modalService = inject(ModalService);
+
   openModal() {
+    this.modalService.useModal(StudentForm);
     console.log("Open Modal");
   }
 }

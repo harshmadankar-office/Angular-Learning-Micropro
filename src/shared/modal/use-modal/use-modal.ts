@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, ViewChild, ViewContainerRef } from '@angular/core';
+import { ModalService } from '../../../services/modal-service';
 
 @Component({
   selector: 'app-use-modal',
@@ -7,14 +8,11 @@ import { Component, Input } from '@angular/core';
   styleUrl: './use-modal.scss',
 })
 export class UseModal {
-  @Input() title = "";
-  isOpen : boolean = false;
+  private modalService = inject(ModalService);
 
-  closeModal(){
+  @ViewChild('modalContent', { read: ViewContainerRef, static: true }) modalContent!: ViewContainerRef;
 
-  }
-
-  saveDetails(){
-
+  closeModal() {
+    this.modalService.close();
   }
 }
