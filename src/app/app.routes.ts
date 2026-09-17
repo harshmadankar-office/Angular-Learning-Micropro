@@ -9,6 +9,7 @@ import { Signals } from './signals/signals';
 import { RXJS } from './rxjs/rxjs';
 import { Login } from './login/login';
 import { authGuard } from './auth/auth-guard';
+import { ShowContentCard } from './show-content-card/show-content-card';
 
 export const routes: Routes = [
 
@@ -81,6 +82,10 @@ export const routes: Routes = [
       {
         path: 'rxjs',
         component: RXJS
+      },
+      {
+        path: 'content-projection-card',
+        component: ShowContentCard
       }
     ]
   },

@@ -1,0 +1,13 @@
+<div>
+    <p>Content-Projection-Reusable Card</p>
+    <hr class="border-1 rounded-2">
+    <div>
+        <!-- <p>Card Body</p> -->
+        <ng-content select="[card-body]"></ng-content>
+    </div>
+    <hr class="border-1 rounded-2">
+    <div>
+        <!-- <p>Card Footer</p> -->
+        <ng-content select="[card-footer]"></ng-content>
+    </div>
+</div>

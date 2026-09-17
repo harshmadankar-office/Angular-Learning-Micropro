@@ -1,13 +1,11 @@
-import { Component, computed, effect, input, signal } from '@angular/core';
-import { Employee, EmployeeForm } from '../../models/model';
-import { json } from 'stream/consumers';
-import { JsonPipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, computed, effect, input, signal } from '@angular/core';
 import { Content } from "../dashboard/dashboard/content/content";
 
 @Component({
   selector: 'app-signals',
   imports: [Content],
   templateUrl: './signals.html',
+  changeDetection : ChangeDetectionStrategy.OnPush,
   styleUrl: './signals.scss',
 })
 export class Signals {

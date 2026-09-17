@@ -2,6 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { Student } from '../../../services/student';
 import { Router } from '@angular/router';
 import { StudentForm } from '../../../models/student';
+import { ErrorService } from '../../../services/error-service';
 
 @Component({
   selector: 'app-student-list',
@@ -13,6 +14,7 @@ export class StudentList {
 
   private studentService = inject(Student);
   private router = inject(Router);
+  private errorService = inject(ErrorService);
 
   students = signal<StudentForm[]>([]);
   isLoading = signal(false);
@@ -28,7 +30,9 @@ export class StudentList {
         this.students.set(data);
         this.isLoading.set(false);
       },
-      error: () => {
+      error: (err) => {
+        this.errorMessage.set("Data Not Found !!"); 
+        this.errorService.handleError(err);
         this.isLoading.set(false);
       }
     });
@@ -62,5 +66,4 @@ export class StudentList {
       }
     })
   }
-
 }

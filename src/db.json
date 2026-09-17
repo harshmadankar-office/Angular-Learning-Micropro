@@ -41,6 +41,41 @@
       "email": "arshad@gmail.com",
       "age": 25,
       "course": "MCA"
+    },
+    {
+      "id": "lLt81J8Skxw",
+      "name": "Harsh",
+      "email": "harsh@gmail.com",
+      "age": 23,
+      "course": "BCCA"
+    },
+    {
+      "id": "53djp7DU2tg",
+      "name": "Dev",
+      "email": "dev@gmail.com",
+      "age": 19,
+      "course": "BCCA"
+    },
+    {
+      "id": "e4rntwn62Qc",
+      "name": "harshit",
+      "email": "harsh90@gmail.com",
+      "age": 24,
+      "course": "B.COM"
+    },
+    {
+      "id": "qzX2gwsaC54",
+      "name": "Saurabh",
+      "email": "saurabh80@gmail.com",
+      "age": 19,
+      "course": "BA"
+    },
+    {
+      "id": "CEyfdSjrxyI",
+      "name": "Jatin",
+      "email": "jatin40@gmail.com",
+      "age": 27,
+      "course": "LAW"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

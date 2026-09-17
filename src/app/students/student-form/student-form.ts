@@ -2,10 +2,14 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Student } from '../../../services/student';
 import { ActivatedRoute, Router } from '@angular/router';
+import { OnlyNumber } from '../../../shared/directives/only-number';
+import { HmButton } from '../../../shared/components/hm-button/hm-button';
+import { HmCard } from '../../../shared/components/hm-card/hm-card';
 
 @Component({
   selector: 'app-student-form',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, OnlyNumber, HmButton, HmCard],
+  standalone : true,
   templateUrl: './student-form.html',
   styleUrl: './student-form.scss',
 })
@@ -21,7 +25,7 @@ export class StudentForm {
     id: ['', [Validators.required]],
     name: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
-    age: [null as number | null, [Validators.required, Validators.min(18)]],
+    age: [null as number | null, [Validators.required,  Validators.maxLength(2)]],
     course: ['', Validators.required]
   });
 

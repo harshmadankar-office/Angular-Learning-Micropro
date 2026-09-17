@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, signal } from '@angular/core';
 import { StudentForm } from '../../../models/student';
 import { Student } from '../../../services/student';
 import { ActivatedRoute } from '@angular/router';
@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
   selector: 'app-student-detail',
   imports: [JsonPipe],
   templateUrl: './student-detail.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './student-detail.scss',
 })
 export class StudentDetail {

@@ -1,44 +1,7 @@
-<!-- <form [formGroup]="studentForm" novalidate>
-	<form [formGroup]="studentForm" (ngSubmit)="onSubmit()" novalidate>
-
-	<div>
-		<label for="Id">Id</label>
-		<input id="Id" type="number" formControlName="Id" />
-	</div>
-
-	<div>
-		<label for="name">Name</label>
-		<input id="name" type="text" formControlName="name" />
-		@if (studentForm.controls.name.touched && studentForm.controls.name.invalid) {
-		<small>Name is required.</small>
-		}
-	</div>
-
-	<div>
-		<label for="email">Email</label>
-		<input id="email" type="email" formControlName="email" />
-		@if (studentForm.controls.email.touched && studentForm.controls.email.invalid) {
-		<small>Enter a valid email address.</small>
-		}
-	</div>
-
-	<div>
-		<label for="age">Age</label>
-		<input id="age" type="number" formControlName="age" />
-	</div>
-
-	<div>
-		<label for="course">Course</label>
-		<input id="course" type="string" formControlName="course" />
-	</div>
-
-	<button type="submit" (click)="saveStudent()">Save student</button>
-</form> -->
-
-<div class="container">
+ <app-hm-card> <!-- // use reusable component to display in card //  -->
 	<h2>{{ studentId ? 'Edit Student' : 'Add Student' }}</h2>
 
-	<form [formGroup]="studentForm" (ngSubmit)="saveStudent()">
+	<form class="form_class" [formGroup]="studentForm" (ngSubmit)="saveStudent()">
 		<div>
 			<label>Id</label>
 			<input type="text" formControlName="id">
@@ -66,7 +29,7 @@
 
 		<div>
 			<label>Age</label>
-			<input type="number" formControlName="age">
+			<input type="number" formControlName="age" appOnlyNumber>
 			@if (studentForm.controls.age.touched && studentForm.controls.age.invalid) {
 			<small>
 				Age must be at least 18
@@ -84,8 +47,14 @@
 			}
 		</div>
 
-		<button type="submit" [disabled]="studentForm.invalid">
+		<!-- <button type="submit" [disabled]="studentForm.invalid">
 			{{ studentId ? 'Update Student' : 'Add Student' }}
-		</button>
+		</button> -->
+
+		<app-hm-button 
+			[disabled]="studentForm.invalid" 
+			[type]="'submit'" 
+			[label]="studentId ? 'Update Student' : 'Add Student'">
+		</app-hm-button>
 	</form>
-</div>
+</app-hm-card>
