@@ -14,7 +14,7 @@ export class ModalService {
   //   private environmentInjector: EnvironmentInjector
   // ) { }
 
-  useModal(component: Type<unknown>, modalTitle:string) {
+  useModal(component: Type<unknown>, modalTitle: string) {
 
     this.title = modalTitle;
 

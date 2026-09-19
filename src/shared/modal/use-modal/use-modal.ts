@@ -10,9 +10,9 @@ import { ModalService } from '../../../services/modal-service';
 export class UseModal {
   @ViewChild('modalContent', { read: ViewContainerRef, static: true }) modalContent!: ViewContainerRef;
   private modalService = inject(ModalService);
-  title : string = '';
+  title: string = '';
 
-  ngOnInit(){
+  ngOnInit() {
     this.title = this.modalService.title;
   }
 
