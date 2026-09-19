@@ -34,6 +34,7 @@ export class Login {
     if (isLogin) {
       this.router.navigate(['/dashboard']);
     } else {
+      alert(this.errorMessage);
       this.errorMessage = "INVALID CREDENTIAL !!!";
       this.loginForm.get('username')?.reset();
       this.loginForm.get('password')?.reset();
