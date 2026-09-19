@@ -12,7 +12,8 @@ export class TryModal {
   private modalService = inject(ModalService);
 
   openModal() {
-    this.modalService.useModal(StudentForm);
+    // const title = 'Student Form';
+    this.modalService.useModal(StudentForm,'Student Form');
     console.log("Open Modal");
   }
 }

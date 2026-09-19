@@ -8,9 +8,13 @@ import { ModalService } from '../../../services/modal-service';
   styleUrl: './use-modal.scss',
 })
 export class UseModal {
-  private modalService = inject(ModalService);
-
   @ViewChild('modalContent', { read: ViewContainerRef, static: true }) modalContent!: ViewContainerRef;
+  private modalService = inject(ModalService);
+  title : string = '';
+
+  ngOnInit(){
+    this.title = this.modalService.title;
+  }
 
   closeModal() {
     this.modalService.close();
