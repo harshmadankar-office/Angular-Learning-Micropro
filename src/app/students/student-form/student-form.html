@@ -1,4 +1,4 @@
- <app-hm-card> <!-- // use reusable component to display in card //  -->
+<app-hm-card> <!-- // use reusable component to display in card //  -->
 	<h2>{{ studentId ? 'Edit Student' : 'Add Student' }}</h2>
 
 	<form class="form_class" [formGroup]="studentForm" (ngSubmit)="saveStudent()">
@@ -6,7 +6,7 @@
 			<label>Id</label>
 			<input type="text" formControlName="id">
 			@if (studentForm.controls.id.touched && studentForm.controls.id.invalid) {
-				<small>Id is required</small>
+			<small>Id is required</small>
 			}
 		</div>
 		<div>
@@ -51,10 +51,13 @@
 			{{ studentId ? 'Update Student' : 'Add Student' }}
 		</button> -->
 
-		<app-hm-button 
-			[disabled]="studentForm.invalid" 
-			[type]="'submit'" 
-			[label]="studentId ? 'Update Student' : 'Add Student'">
-		</app-hm-button>
+		@defer (on viewport) {
+			<app-hm-button [disabled]="studentForm.invalid" [type]="'submit'"
+				[label]="studentId ? 'Update Student' : 'Add Student'">
+			</app-hm-button>
+		} @placeholder {
+			<span></span>
+		}
+
 	</form>
 </app-hm-card>
