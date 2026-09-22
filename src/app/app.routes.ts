@@ -11,6 +11,11 @@ import { Login } from './login/login';
 import { authGuard } from './auth/auth-guard';
 import { ShowContentCard } from './show-content-card/show-content-card';
 import { TryModal } from './try-modal/try-modal';
+import { HospitalClinicDesk } from '../hospital-clinic-desk/hospital-clinic-desk';
+import path from 'path';
+import { Patients } from '../hospital-clinic-desk/patients/patients';
+import { Doctor } from '../hospital-clinic-desk/doctor/doctor';
+import { Appointments } from '../hospital-clinic-desk/appointments/appointments';
 
 export const routes: Routes = [
 
@@ -91,12 +96,32 @@ export const routes: Routes = [
       {
         path: 'use-modal',
         component: TryModal
-      }
+      },
+      {
+        path:'hospital-clinic-desk',
+        component: HospitalClinicDesk,
+
+        children:[
+          {
+            path:'patients',
+            component: Patients
+          },
+          {
+            path:'doctors',
+            component:Doctor
+          },
+          {
+            path:'appointments',
+            component: Appointments
+          }
+
+        ]
+      },
     ]
   },
 
   // try - lazy loading ::
-  // this route for parent/ child route :
+  // this route for parent/ child route ::
 
   {
     path: 'employee',

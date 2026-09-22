@@ -3,6 +3,15 @@
   padding: 7px 10px;
 }
 
-a{
+a {
   text-decoration: none;
+}
+
+.hospital {
+  background-color: antiquewhite;
+
+  &:hover {
+    background-color: rgb(209, 243, 244);
+    color: black;
+  }
 }
