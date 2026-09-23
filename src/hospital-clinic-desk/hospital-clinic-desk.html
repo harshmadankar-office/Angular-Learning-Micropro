@@ -6,22 +6,11 @@
         <a routerLink="common-clinic-desk/appointment">Appointments</a>
     </div>
     <hr>
-    <router-outlet></router-outlet>
 
     <div>
-        @if (activeTab === 'patient') {
-        <h3>Patient</h3>
-
-        }
-
-        @if (activeTab === 'doctor') {
-        <h3>Doctor</h3>
-
-        }
-
-        @if (activeTab === 'appointment') {
-        <h3>Appointment</h3>
-
-        }
+        <app-common-clinic-desk 
+            [activeTab]="activeTab">
+        </app-common-clinic-desk>
     </div>
+    <!-- <router-outlet></router-outlet> -->
 </div>

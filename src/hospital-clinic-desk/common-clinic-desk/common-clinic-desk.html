@@ -1,1 +1,22 @@
-<p>common-clinic-desk works!</p>
+<app-hm-card>
+    <div class="d-flex justify-content-between">
+        <div>
+            <h3>{{activeTab === 'patient' ? 'Patient Details' : activeTab == 'doctor' ? 'Doctor Details' : 'Appointments Details' }}</h3>
+        </div>
+        <div>
+            <app-hm-button [type]="'submit'" 
+                [label]="'Add ' + activeTab | titlecase ">
+            </app-hm-button>
+        </div>
+    </div>
+</app-hm-card>
+
+    <!-- @if (activeTab === 'patient') {
+        <h3>Patients Details</h3>
+        }
+        @if (activeTab === 'doctor') {
+        <h3>Doctor Details</h3>
+        }
+        @if (activeTab === 'appointment') {
+        <h3>Appointments Details</h3>
+        } -->
