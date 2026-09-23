@@ -4,7 +4,7 @@ import { CommonClinicDesk } from './common-clinic-desk/common-clinic-desk';
 
 @Component({
   selector: 'app-hospital-clinic-desk',
-  imports: [RouterLink, RouterOutlet, CommonClinicDesk],
+  imports: [RouterLink, CommonClinicDesk],
   templateUrl: './hospital-clinic-desk.html',
   styleUrl: './hospital-clinic-desk.scss',
 })
