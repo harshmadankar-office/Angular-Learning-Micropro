@@ -12,8 +12,9 @@ export class HospitalClinicDesk {
   activeTab: string = '';
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
+    this.route.children[0].children[0].paramMap.subscribe(params => {
       this.activeTab = params.get('tab') ?? '';
+      console.log(this.activeTab);
     });
   }
 }

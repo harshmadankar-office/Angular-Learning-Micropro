@@ -118,29 +118,6 @@ export const routes: Routes = [
           }
         ]
       }
-      // {
-      //   path: 'hospital-clinic-desk',
-      //   component: HospitalClinicDesk,
-
-      //   children: [
-      //     {
-      //       path: 'common-clinic-desk',
-      //       component: CommonClinicDesk,
-
-      //       children: [
-      //         {
-      //           path: '',
-      //           redirectTo: 'patient',
-      //           pathMatch: 'full'
-      //         },
-      //         {
-      //           path: '/:tab',
-      //           component: CommonClinicDesk
-      //         }
-      //       ]
-      //     }
-      //   ]
-      // },
     ]
   },
 
