@@ -94,29 +94,53 @@ export const routes: Routes = [
         path: 'use-modal',
         component: TryModal
       },
+
+      // for hospit;l clinic desk :
+
       {
         path: 'hospital-clinic-desk',
         component: HospitalClinicDesk,
 
         children: [
           {
-            path: 'common-clinic-desk/:tab',
-            component: CommonClinicDesk
-          },
-          // {
-          //   path:'patients',
-          //   component: Patients
-          // },
-          // {
-          //   path:'doctors',
-          //   component:Doctor
-          // },
-          // {
-          //   path:'appointments',
-          //   component: Appointments
-          // }
+            path: 'common-clinic-desk',
+            children: [
+              {
+                path: '',
+                redirectTo: 'patient',
+                pathMatch: 'full'
+              },
+              {
+                path: ':tab',
+                component: CommonClinicDesk
+              }
+            ]
+          }
         ]
-      },
+      }
+      // {
+      //   path: 'hospital-clinic-desk',
+      //   component: HospitalClinicDesk,
+
+      //   children: [
+      //     {
+      //       path: 'common-clinic-desk',
+      //       component: CommonClinicDesk,
+
+      //       children: [
+      //         {
+      //           path: '',
+      //           redirectTo: 'patient',
+      //           pathMatch: 'full'
+      //         },
+      //         {
+      //           path: '/:tab',
+      //           component: CommonClinicDesk
+      //         }
+      //       ]
+      //     }
+      //   ]
+      // },
     ]
   },
 
@@ -160,8 +184,8 @@ export const routes: Routes = [
   //   path: '**',
   //   component: NotFoundComponent
   // }
-  // {
-  //   path: '**',
-  //   redirectTo: 'login'
-  // }
+  {
+    path: '**',
+    redirectTo: 'login'
+  }
 ];

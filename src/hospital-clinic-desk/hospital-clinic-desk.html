@@ -7,4 +7,21 @@
     </div>
     <hr>
     <router-outlet></router-outlet>
+
+    <div>
+        @if (activeTab === 'patient') {
+        <h3>Patient</h3>
+
+        }
+
+        @if (activeTab === 'doctor') {
+        <h3>Doctor</h3>
+
+        }
+
+        @if (activeTab === 'appointment') {
+        <h3>Appointment</h3>
+
+        }
+    </div>
 </div>
