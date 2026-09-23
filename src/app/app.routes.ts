@@ -12,10 +12,7 @@ import { authGuard } from './auth/auth-guard';
 import { ShowContentCard } from './show-content-card/show-content-card';
 import { TryModal } from './try-modal/try-modal';
 import { HospitalClinicDesk } from '../hospital-clinic-desk/hospital-clinic-desk';
-import path from 'path';
-import { Patients } from '../hospital-clinic-desk/patients/patients';
-import { Doctor } from '../hospital-clinic-desk/doctor/doctor';
-import { Appointments } from '../hospital-clinic-desk/appointments/appointments';
+import { CommonClinicDesk } from '../hospital-clinic-desk/common-clinic-desk/common-clinic-desk';
 
 export const routes: Routes = [
 
@@ -98,23 +95,26 @@ export const routes: Routes = [
         component: TryModal
       },
       {
-        path:'hospital-clinic-desk',
+        path: 'hospital-clinic-desk',
         component: HospitalClinicDesk,
 
-        children:[
+        children: [
           {
-            path:'patients',
-            component: Patients
+            path: 'common-clinic-desk/:tab',
+            component: CommonClinicDesk
           },
-          {
-            path:'doctors',
-            component:Doctor
-          },
-          {
-            path:'appointments',
-            component: Appointments
-          }
-
+          // {
+          //   path:'patients',
+          //   component: Patients
+          // },
+          // {
+          //   path:'doctors',
+          //   component:Doctor
+          // },
+          // {
+          //   path:'appointments',
+          //   component: Appointments
+          // }
         ]
       },
     ]
@@ -160,8 +160,8 @@ export const routes: Routes = [
   //   path: '**',
   //   component: NotFoundComponent
   // }
-  {
-    path: '**',
-    redirectTo: 'login'
-  }
+  // {
+  //   path: '**',
+  //   redirectTo: 'login'
+  // }
 ];
