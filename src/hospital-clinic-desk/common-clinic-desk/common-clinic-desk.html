@@ -4,18 +4,29 @@
             <h3>{{activeTab === 'patient' ? 'Patient Details' : activeTab == 'doctor'
                 ? 'Doctor Details' : 'Appointments Details' }}</h3>
         </div>
-        <div>
-            <app-hm-button [type]="'submit'" [label]="'Add ' + activeTab | titlecase"></app-hm-button>
+        <div class="d-flex gap-2">
+            <app-hm-button (click)="refresh()" [type]="'submit'"
+                [label]="'Refresh'"></app-hm-button>
+            <app-hm-button (click)="addDetails()" [type]="'submit'"
+                [label]="'Add ' + activeTab | titlecase"></app-hm-button>
         </div>
     </div>
+    <div>
+        <app-content-projection-card>
+            <p card-heading>{{activeTab === 'patient' ? 'All Patients' : activeTab == 'doctor'
+                ? 'All Doctors' : 'All Appointments' }}</p>
+            <div card-body>
+              @if (storeData.length > 0) {
+                @for (item of storeData; track item.id; let i = $index) {
+                  <p>{{$index + 1 + '.'}} {{ item.name }} - {{ '(' + item.email  + ')'}} </p>
+                }
+              } @else {
+                <p>No {{ activeTab }} found.</p>
+              }
+            </div>
+            <div card-footer>
+               <p>{{ 'Total data ::: ' + storeData.length }}</p>
+            </div>
+        </app-content-projection-card>
+    </div>
 </app-hm-card>
-
-<!-- @if (activeTab === 'patient') {
-        <h3>Patients Details</h3>
-        }
-        @if (activeTab === 'doctor') {
-        <h3>Doctor Details</h3>
-        }
-        @if (activeTab === 'appointment') {
-        <h3>Appointments Details</h3>
-        } -->

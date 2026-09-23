@@ -9,14 +9,16 @@ export class ModalService {
   private appRef = inject(ApplicationRef);
   private environmentInjector = inject(EnvironmentInjector);
   title !: string;
+  data : string | number | boolean | any ;
   // constructor(
   //   private appRef!: ApplicationRef,
   //   private environmentInjector: EnvironmentInjector
   // ) { }
 
-  useModal(component: Type<unknown>, modalTitle: string) {
+  useModal(component: Type<unknown>, modalTitle: string, data?:any) {
 
     this.title = modalTitle;
+    this.data = data;
 
     // Create Modal Component
     this.modalRef = createComponent(UseModal, { environmentInjector: this.environmentInjector });
@@ -32,6 +34,10 @@ export class ModalService {
 
     // Insert selected component inside modal
     modalInstance.modalContent.createComponent(component);
+  }
+
+  getData(){
+    return this.data;
   }
 
   close() {

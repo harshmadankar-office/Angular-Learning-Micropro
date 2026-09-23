@@ -1,0 +1,43 @@
+<!-- <form class="form_class" [formGroup]=" deskForm" (ngSubmit)="saveDetails()"> -->
+<form class="form_class" [formGroup]=" deskForm" (keydown.enter)="$event.preventDefault()">
+    
+    <div>
+        <label>Id</label>
+        <input type="text" formControlName="id" readonly>
+        <!-- @if (deskForm.controls.id.touched && deskForm.controls.id.invalid) { -->
+        <!-- <small>Id is required</small> -->
+        <!-- } -->
+    </div>
+
+    <div>
+        <label>Name</label>
+        <input type="text" formControlName="name">
+        @if ( deskForm.controls.name.touched && deskForm.controls.name.invalid) {
+        <small>Name is required</small>
+        }
+    </div>
+
+    <div>
+        <label>Email</label>
+        <input type="email" formControlName="email">
+        @if ( deskForm.controls.email.touched && deskForm.controls.email.invalid) {
+        <small>
+            Please enter a valid email
+        </small>
+        }
+    </div>
+
+    <div>
+        <label>Age</label>
+        <input type="number" formControlName="age" appOnlyNumber>
+        @if ( deskForm.controls.age.touched && deskForm.controls.age.invalid) {
+        <small>
+            Age must be at least 18
+        </small>
+        }
+    </div>
+
+    <app-hm-button [disabled]="deskForm.invalid" [type]="'submit'" 
+        [label]="isEditMode ? 'Update' : 'Save'" (click)="saveDetails()">
+    </app-hm-button>
+</form>

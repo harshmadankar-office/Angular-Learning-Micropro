@@ -1,9 +1,10 @@
 import { Component, inject, ViewChild, ViewContainerRef } from '@angular/core';
 import { ModalService } from '../../../services/modal-service';
+import { TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-use-modal',
-  imports: [],
+  imports: [TitleCasePipe],
   templateUrl: './use-modal.html',
   styleUrl: './use-modal.scss',
 })
