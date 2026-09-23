@@ -9,7 +9,7 @@ import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 })
 export class HospitalClinicDesk {
   private route = inject(ActivatedRoute);
-  activeTab: string = 'patient';
+  activeTab: string = '';
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
