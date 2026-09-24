@@ -67,6 +67,8 @@ export class HospitalClinicDeskForm {
     const data = JSON.parse(localStorage.getItem(this.localId) || '[]');
     data.push(formData);
     localStorage.setItem(this.localId, JSON.stringify(data));
+    // event :: when any data change on localStorage :
+    window.dispatchEvent(new CustomEvent('localStorageChange', { detail: this.localId }));
     this.deskForm.reset();
     this.generateNextId();
   }

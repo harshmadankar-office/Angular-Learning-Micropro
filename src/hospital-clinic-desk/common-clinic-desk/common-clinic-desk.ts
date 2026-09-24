@@ -1,4 +1,4 @@
-import { Component, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 import { HmCard } from '../../shared/components/hm-card/hm-card';
 import { HmButton } from '../../shared/components/hm-button/hm-button';
 import { TitleCasePipe } from '@angular/common';
@@ -12,18 +12,30 @@ import { HospitalClinicDeskForm } from '../hospital-clinic-desk-form/hospital-cl
   templateUrl: './common-clinic-desk.html',
   styleUrl: './common-clinic-desk.scss',
 })
-export class CommonClinicDesk implements OnChanges {
+export class CommonClinicDesk implements OnChanges, OnDestroy {
   private modalService = inject(ModalService);
+  private cdr = inject(ChangeDetectorRef);
   @Input() activeTab: string = '';
   storeData: any[] = [];
 
   ngOnInit() {
     this.getDetails();
+    window.addEventListener('localStorageChange', this.onStorageChange);
   }
+
+  private onStorageChange = (e: Event) => {
+    const key = (e as CustomEvent).detail;
+    if (key === this.activeTab) {
+      this.getDetails();
+      this.cdr.markForCheck();
+      this.cdr.detectChanges();
+    }
+  };
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['activeTab']) {
       this.getDetails();
+      this.cdr.markForCheck();
     }
   }
 
@@ -34,9 +46,6 @@ export class CommonClinicDesk implements OnChanges {
   }
 
   getDetails() {
-    // this.storeData = this.modalService.getData();
-    // localStorage.getItem(this.storeData);
-    // console.log(localStorage.getItem(this.storeData));
     if (!this.activeTab) {
       this.storeData = [];
       return;
@@ -49,7 +58,11 @@ export class CommonClinicDesk implements OnChanges {
     }
   }
 
-  refresh(){
+  refresh() {
     this.getDetails();
+  }
+
+  ngOnDestroy() {
+    window.removeEventListener('localStorageChange', this.onStorageChange);
   }
 }
